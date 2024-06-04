@@ -12,7 +12,7 @@ module.exports = async (request, response, next) => {
     token = token.split(" ")[1];
     let decodedToken = jwt.verify(token, process.env.secret);
     let userEmail = await User.findOne({ email: decodedToken.email });
-    console.log(student.role);
+    console.log(userEmail.email);
     if (userEmail.email === User.email) {
       next();
       
