@@ -1,6 +1,6 @@
 // app.test.js
 const request = require('supertest');
-const app = require('./app');
+const app = require('../app')
 
 //test to create task
 describe('POST /tasks', () => {
@@ -34,7 +34,7 @@ describe('GET /tasks/:id', () => {
       
       const response = await request(app).get(`/tasks/66605c6c9ba03dd792053aaf`);
       expect(response.statusCode).toBe(200);
-      expect(response.body.id).toBe(taskId);
+      expect(response.body.id).toBe('66605c6c9ba03dd792053aaf');
     });
   
     test('It should return 404 if task with specified ID does not exist', async () => {

@@ -107,7 +107,7 @@ exports.deleteTask = async(request, response)=>{
 }
 
 //sort and get task with the current due date
-exports.getTaskWithCurrentDueDate = async(request, response)=>{
+exports.getNextThreeDueTasks = async(request, response)=>{
     try {
         const tasks = await Task.find({}).sort({due_date:1}).limit(3);
         return response.status(200).json({success:true , responseMessage:tasks});
