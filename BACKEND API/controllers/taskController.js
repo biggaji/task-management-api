@@ -1,5 +1,5 @@
 const Mongoose = require('mongoose');
-const Task = require('./models/Task');
+const Task = require('../models/task');
 
 // create new task
 exports.createTask = async(request, response)=>{
@@ -101,6 +101,16 @@ exports.deleteTask = async(request, response)=>{
         // delete task
         const deletedTask = await Task.findByIdAndDelete(task_id);
         return response.status(200).json({success:true , responseMessage:deletedTask});
+    } catch (error) {
+        return response.status(400).json({success:false, responseMessage:error})
+    }
+}
+
+//sort and get task with the current due date
+exports.getTaskWithCurrentDueDate = async(request, response)=>{
+    try {
+        const tasks = await Task.find({}).sort({due_date:1}).limit(3);
+        return response.status(200).json({success:true , responseMessage:tasks});
     } catch (error) {
         return response.status(400).json({success:false, responseMessage:error})
     }

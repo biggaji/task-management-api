@@ -17,9 +17,9 @@ let taskSchema = new Mongoose.Schema({
 
     },
     due_date: {
-        type: Date,
+        type: String,
         required: true
     }
 }, { timestamps: true });
 
-model.exports = module.Mongoose("Task", taskSchema);
+module.exports = Mongoose.model("Task", taskSchema);

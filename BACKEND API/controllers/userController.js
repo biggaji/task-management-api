@@ -28,7 +28,7 @@ exports.createUser = async (request, response) => {
         // create  user token
         const userToken = jwt.sign(userPayLoad, process.env.JWT_SECRET, { expiresIn: 86400 });
         // return user token
-        return response.status(200).json({ success: true, message: `User ${savedUser.name} saved successfully`, user: savedUser, token: userToken })
+        return response.status(200).json({ success: true, message: `User  saved successfully`, user: savedUser, token: userToken })
     } catch (error) {
         return response.status(500).json({ success: false, message: `Unable to save user ${savedUser.name}`, error });
     }
