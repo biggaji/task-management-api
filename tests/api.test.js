@@ -1,7 +1,6 @@
 // app.test.js
 const request = require('supertest');
 const app = require('../app');
-const resetDatabase = require('../utils/resetDatabase');
 const mongoose = require('mongoose');
 
 // Function to generate unique task data
