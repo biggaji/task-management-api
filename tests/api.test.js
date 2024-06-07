@@ -61,7 +61,7 @@ describe('GET /tasks/:id', () => {
 	});
 
 	test('It should return 404 if task with specified ID does not exist', async () => {
-		const response = await request(app).get('/tasks/666220d1fb063ce9171bee4d');
+		const response = await request(app).get('/tasks/6662dec5eb2e508cfcbb2fcf');
 		expect(response.statusCode).toBe(404);
 	});
 });

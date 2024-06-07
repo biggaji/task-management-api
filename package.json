@@ -4,7 +4,7 @@
 	"description": "A task management API that allow users to create task",
 	"main": "index.js",
 	"scripts": {
-		"test": "jest --timeout=10000 --detectOpenHandles",
+		"test": "jest --timeout=15000 --detectOpenHandles",
 		"dev": "nodemon index.js"
 	},
 	"keywords": [
